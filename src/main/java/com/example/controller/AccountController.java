@@ -34,6 +34,11 @@ public class AccountController {
     	return accountService.findId(accountId);
     	
     }
+    
+    @PostMapping("/deposit/{account_id}")
+    public Account deposit(@PathVariable("account_id") Integer accountId, RequestAmount requestAmount) {
+    	return this.accountService.deposit(accountId,requestAmount);
+    }
 
 	
 }

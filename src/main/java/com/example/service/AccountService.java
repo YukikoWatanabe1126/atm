@@ -35,4 +35,13 @@ public class AccountService {
     	Account account = optionalAccount.get();
     	return account;
     }
+    
+    public Account deposit(Integer accountId, RequestAmount requestAmount) {
+    	Account account = findId(accountId);
+    	int depositAmount = requestAmount.getAmount();
+    	int update = account.getAmount() + depositAmount;
+        account.setAmount(update);
+        return this.accountRepository.save(account);
+    	
+    }
 }
