@@ -8,7 +8,7 @@ public class ResponseAmount {
         return this.amount;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public Integer setAmount(Integer amount) {
+        return this.amount = amount;
     }
 }
