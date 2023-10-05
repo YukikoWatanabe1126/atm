@@ -42,6 +42,13 @@ public class AccountService {
     	int update = account.getAmount() + depositAmount;
         account.setAmount(update);
         return this.accountRepository.save(account);
-    	
+    }
+    
+    public Account withdraw(Integer withdraw, RequestAmount requestAmount) {
+    	Account account = findId(withdraw);
+    	int withdrawAmount = requestAmount.getAmount();
+    	int update = account.getAmount() - withdrawAmount;
+    	account.setAmount(update);
+    	return this.accountRepository.save(account);
     }
 }

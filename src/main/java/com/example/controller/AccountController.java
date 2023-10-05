@@ -39,6 +39,11 @@ public class AccountController {
     public Account deposit(@PathVariable("account_id") Integer accountId, @RequestBody RequestAmount requestAmount) {
     	return this.accountService.deposit(accountId,requestAmount);
     }
+    
+    @PostMapping("/withdraw/{account_id}")
+    public Account withdraw(@PathVariable("account_id") Integer account_id, @RequestBody RequestAmount requestAmount) {
+    	return this.accountService.withdraw(account_id, requestAmount);
+    }
 
 	
 }
